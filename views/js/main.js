@@ -421,11 +421,13 @@ var resizePizzas = function(size) {
 
   changeSliderLabel(size);
 
+   //Removed the determineDx function, it was performing a shift along the x-axis
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
-  //function determineDx (elem, size) {
-  //  var oldWidth = elem.offsetWidth;
-  //  var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
-  //  var oldSize = oldWidth / windowWidth;
+  /*function determineDx (elem, size) {
+	  var oldWidth = elem.offsetWidth;
+      var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
+      var oldSize = oldWidth / windowWidth;
+  */
 
     // Changes the slider value to a percent width
     function sizeSwitcher (size) {
@@ -443,12 +445,14 @@ var resizePizzas = function(size) {
 	
 	var windowWidth = document.getElementById("randomPizzas").offsetWidth;
 
-    //var newSize = sizeSwitcher(size);
-    //var dx = (newSize - oldSize) * windowWidth;
-    //return dx;
+    //Remove from main
+	/*var newSize = sizeSwitcher(size);
+      var dx = (newSize - oldSize) * windowWidth;
+      return dx;
+	  */
   
 
-  // Iterates through pizza elements on the page and changes their widths
+  // Iterates through pizza elements on the page and changes their widths, was called by the determinDx function above but removed from code and using below
   function changePizzaSizes(size) {
 	var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
 	  
@@ -495,10 +499,10 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
   console.log("Average scripting time to generate last 10 frames: " + sum / 10 + "ms");
 }
 
-/*
+
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
-
+/*
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
@@ -550,7 +554,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var pizzasToDisplay = Math.ceil(screen.height / s) * 8
   console.log(pizzasToDisplay);
   var movingPizzas = document.getElementById('movingPizzas1');
-  /* replaced query selector with getElementById */
+  // replaced query selector with getElementById //
   
   for (var i = 0; i < pizzasToDisplay; i++) {
     var elem = document.createElement('img');
