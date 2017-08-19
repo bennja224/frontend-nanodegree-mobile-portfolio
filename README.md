@@ -65,7 +65,7 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 ## Improve PageSpeed score: 
 * Update style.css font-family from Helvetica to Open Sans
 
-* Update index.html updated to async removed: <script async src="//fonts.googleapis.com/css?family=Open+Sans:400,700"></script> 
+* Update index.html updated to async and added WebFontConfig <script async src="//fonts.googleapis.com/css?family=Open+Sans:400,700"></script> based on reviewers suggestion.
 * moved the GoogleAnalyticsObject script to the bottom removed and 
 * placed CSS inline added media query to css/print/css
 
